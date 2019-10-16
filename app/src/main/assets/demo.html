@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+
+<html lang="esp">
+    <head>
+        <script type="text/javascript">
+            
+            function showAlert() {
+                alert("Función JS");
+            }
+
+            window.onload = () =>{
+                //alert("Conectado!");
+                if (window.interOp) {
+                    titulo.innerHTML = 'Conectado!';
+                    alert('Conectado!');
+                    showAndroidToast()
+                } else {
+                    titulo.innerHTML = 'No Conectado!';
+                    alert('No conectado!');
+                }
+            }
+       
+            function showAndroidToast() {
+                window.interOp.showToast("Hello, world!");
+            }
+            </script>
+    </head>
+    
+    <body>
+        
+        <title>PRUEBA JAVASCRIPT INTERFACE SCRIPT</title>
+    
+        <h1 id="titulo">PRUEBA JAVASCRIPT INTERFACE SCRIPT</h1>
+                    
+    </body>
+    
+</html>
