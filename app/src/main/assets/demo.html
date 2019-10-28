@@ -873,7 +873,16 @@
                 };
 
                 console.log('permissionsTree', permissionsTree);
+                checkJavascriptInterface();
                 window.webkit.messageHandlers.interOp.postMessage("{ type: 'permissions_tree', data: " + JSON.stringify(permissionsTree) + " }");
+            }
+
+            function checkJavascriptInterface() {
+                console.log("window.webkit", window.webkit)
+                if (window.webkit == undefined) {
+                    window.webkit = { 'messageHandlers': { 'interOp': window.interOp } };
+                    console.log('Matched webkit interface');
+                }
             }
 
             </script>
