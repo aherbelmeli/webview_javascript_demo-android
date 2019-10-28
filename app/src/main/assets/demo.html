@@ -4,25 +4,878 @@
     <head>
         <script type="text/javascript">
             
-            function showAlert() {
-                alert("Función JS");
+            function receivePermissions(permissionsTree) {
+                parrafo.innerHTML = permissionsTree
             }
 
-            window.onload = () =>{
-                //alert("Conectado!");
-                if (window.interOp) {
-                    titulo.innerHTML = 'Conectado!';
-                    alert('Conectado!');
-                    showAndroidToast()
-                } else {
-                    titulo.innerHTML = 'No Conectado!';
-                    alert('No conectado!');
-                }
+            function goToNative() {
+                var permissionsTree = {
+                    "header_title": "Colaboradores",
+                    "preview_box": {
+                        "title": "Elige los permisos para",
+                        "value": "aosjdnasouhda@aosudhaous.com",
+                        "description": "",
+                        "especial_action": {}
+                    },
+                    "scopes_box": {
+                        "scopes_mp": {
+                            "title": "Mercado Pago",
+                            "platform": "MP",
+                            "scopes": [
+                                {
+                                    "id": "grouper_collect",
+                                    "depends": "",
+                                    "disabled": false,
+                                    "label": "Cobrar",
+                                    "checked": "none",
+                                    "info": "",
+                                    "hint": "",
+                                    "grouper": true,
+                                    "type": "",
+                                    "scopes": [
+                                        {
+                                            "id": "collect_on_site",
+                                            "depends": "",
+                                            "disabled": false,
+                                            "label": "Cobrar en tu local",
+                                            "checked": "none",
+                                            "info": "(Point, código QR o efectivo)",
+                                            "hint": "",
+                                            "grouper": false,
+                                            "scopes": [],
+                                            "alt_labels": []
+                                      },
+                                      {
+                                            "id": "collect_link",
+                                            "depends": "",
+                                            "disabled": false,
+                                            "label": "Cobrar con botón y link de pago",
+                                            "checked": "none",
+                                            "info": "",
+                                            "hint": "",
+                                            "grouper": false,
+                                            "scopes": [],
+                                            "alt_labels": []
+                                      },
+                                      {
+                                            "id": "collect_subscription",
+                                            "depends": "",
+                                            "disabled": false,
+                                            "label": "Suscripciones",
+                                            "checked": "none",
+                                            "info": "",
+                                            "hint": "",
+                                            "grouper": false,
+                                            "scopes": [],
+                                            "alt_labels": []
+                                      },
+                                      {
+                                            "id": "collect_money_request",
+                                            "depends": "",
+                                            "disabled": false,
+                                            "label": "Solicitar dinero",
+                                            "checked": "none",
+                                            "info": "",
+                                            "hint": "",
+                                            "grouper": false,
+                                            "scopes": [],
+                                            "alt_labels": []
+                                      },
+                                      {
+                                            "id": "collect_telesales",
+                                            "depends": "",
+                                            "disabled": false,
+                                            "label": "Televentas",
+                                            "checked": "none",
+                                            "info": "",
+                                            "hint": "",
+                                            "grouper": false,
+                                            "scopes": [],
+                                            "alt_labels": []
+                                      },
+                                      {
+                                            "id": "mediations",
+                                            "depends": "",
+                                            "disabled": false,
+                                            "label": "Resolver reclamos de Mercado Libre",
+                                            "checked": "none",
+                                            "info": "",
+                                            "hint": "",
+                                            "grouper": false,
+                                            "scopes": [],
+                                            "alt_labels": []
+                                      },
+                                      {
+                                            "id": "chargeback",
+                                            "depends": "",
+                                            "disabled": false,
+                                            "label": "Gestionar contracargos",
+                                            "checked": "none",
+                                            "info": "",
+                                            "hint": "",
+                                            "grouper": false,
+                                            "scopes": [],
+                                            "alt_labels": []
+                                      },
+                                      {
+                                            "id": "grouper_refund",
+                                            "depends": "",
+                                            "disabled": false,
+                                            "label": "Hacer devoluciones",
+                                            "checked": "none",
+                                            "info": "",
+                                            "hint": "",
+                                            "grouper": true,
+                                            "type": "one_option",
+                                            "scopes": [
+                                                {
+                                                    "id": "refund_collaborator",
+                                                    "depends": "",
+                                                    "disabled": false,
+                                                    "label": "Solo sus cobros",
+                                                    "checked": "none",
+                                                    "info": "",
+                                                    "hint": "",
+                                                    "grouper": false,
+                                                    "scopes": [],
+                                                    "alt_labels": []
+                                                },
+                                                {
+                                                    "id": "refund_store",
+                                                    "depends": "",
+                                                    "disabled": false,
+                                                    "label": "Los cobros del local",
+                                                    "checked": "none",
+                                                    "info": "",
+                                                    "hint": "",
+                                                    "grouper": false,
+                                                    "scopes": [],
+                                                    "alt_labels": []
+                                                },
+                                                {
+                                                    "id": "refund_al",
+                                                    "depends": "",
+                                                    "disabled": false,
+                                                    "label": "Todos los cobros de la cuenta",
+                                                    "checked": "none",
+                                                    "info": "",
+                                                    "hint": "",
+                                                    "grouper": false,
+                                                    "scopes": [],
+                                                    "alt_labels": []
+                                                }
+                                            ],
+                                            "alt_labels": [
+                                                {
+                                                    "id": "tittle",
+                                                  "label": "¿Qué cobros podrá devolver?"
+                                              }
+                                            ]
+                                        }
+                                      ],
+                                    "alt_labels": [],
+                                    "primary_action": {
+                                      "disabled": false,
+                                      "label": "Seleccionar todos",
+                                      "link": "/",
+                                      "type": ""
+                                    }
+                                },
+                                {
+                                    "id": "grouper_pay",
+                                    "depends": "",
+                                    "disabled": false,
+                                    "label": "Pagos",
+                                    "checked": "none",
+                                    "info": "",
+                                    "hint": "",
+                                    "grouper": true,
+                                    "type": "",
+                                    "scopes": [
+                                        {
+                                            "id": "pay_transport",
+                                            "depends": "",
+                                            "disabled": false,
+                                            "label": "Cargar SUBE",
+                                            "checked": "none",
+                                            "info": "",
+                                            "hint": "",
+                                            "grouper": false,
+                                            "scopes": [],
+                                            "alt_labels": []
+                                        },
+                                        {
+                                            "id": "pay_cellphone",
+                                            "depends": "",
+                                            "disabled": false,
+                                            "label": "Recargar celular",
+                                            "checked": "none",
+                                            "info": "",
+                                            "hint": "",
+                                            "grouper": false,
+                                            "scopes": [],
+                                            "alt_labels": []
+                                        },
+                                        {
+                                            "id": "pay_service",
+                                            "depends": "",
+                                            "disabled": false,
+                                            "label": "Pagar servicios",
+                                            "checked": "none",
+                                            "info": "",
+                                            "hint": "",
+                                            "grouper": false,
+                                            "scopes": [],
+                                            "alt_labels": []
+                                        },
+                                        {
+                                            "id": "pay_directv",
+                                            "depends": "",
+                                            "disabled": false,
+                                            "label": "recargar Directv",
+                                            "checked": "none",
+                                            "info": "",
+                                            "hint": "",
+                                            "grouper": false,
+                                            "scopes": [],
+                                            "alt_labels": []
+                                        },
+                                        {
+                                            "id": "pay_qr",
+                                            "depends": "",
+                                            "disabled": false,
+                                            "label": "Pagar con código QR",
+                                            "checked": "none",
+                                            "info": "",
+                                            "hint": "",
+                                            "grouper": false,
+                                            "scopes": [],
+                                            "alt_labels": []
+                                        },
+                                        {
+                                            "id": "pay_starbucks",
+                                            "depends": "",
+                                            "disabled": false,
+                                            "label": "Cargar Starbucks card",
+                                            "checked": "none",
+                                            "info": "",
+                                            "hint": "",
+                                            "grouper": false,
+                                            "scopes": [],
+                                            "alt_labels": []
+                                        },
+                                        {
+                                            "id": "pay_supplier",
+                                            "depends": "",
+                                            "disabled": false,
+                                            "label": "Pago a proveedores",
+                                            "checked": "none",
+                                            "info": "",
+                                            "hint": "",
+                                            "grouper": false,
+                                            "scopes": [],
+                                            "alt_labels": []
+                                        }
+                                    ],
+                                    "alt_labels": [],
+                                    "primary_action": {
+                                      "disabled": false,
+                                      "label": "Seleccionar todos",
+                                      "link": "/",
+                                      "type": ""
+                                    }
+                                },
+                                {
+                                    "id": "grouper_money_management",
+                                    "depends": "",
+                                    "disabled": false,
+                                    "label": "Pagos",
+                                    "checked": "none",
+                                    "info": "",
+                                    "hint": "",
+                                    "grouper": true,
+                                    "type": "",
+                                    "scopes": [
+                                        {
+                                            "id": "pay_send_money",
+                                            "depends": "",
+                                            "disabled": false,
+                                            "label": "Enviar dinero",
+                                            "checked": "none",
+                                            "info": "",
+                                            "hint": "",
+                                            "grouper": false,
+                                            "scopes": [],
+                                            "alt_labels": []
+                                        },
+                                        {
+                                            "id": "balance",
+                                            "depends": "",
+                                            "disabled": false,
+                                            "label": "Ver saldo de la cuenta",
+                                            "checked": "none",
+                                            "info": "",
+                                            "hint": "",
+                                            "grouper": true,
+                                            "type": "check",
+                                            "scopes": [
+                                              {
+                                                "id": "fund",
+                                                "depends": "",
+                                                "disabled": false,
+                                                "label": "Ingresar dinero",
+                                                "checked": "none",
+                                                "info": "",
+                                                "hint": "",
+                                                "grouper": false,
+                                                "scopes": [],
+                                                "alt_labels": []
+                                              },
+                                              {
+                                                "id": "withdraw",
+                                                "depends": "",
+                                                "disabled": false,
+                                                "label": "Retirar dinero",
+                                                "checked": "none",
+                                                "info": "",
+                                                "hint": "",
+                                                "grouper": false,
+                                                "scopes": [],
+                                                "alt_labels": []
+                                              },
+                                              {
+                                                "id": "money_advance",
+                                                "depends": "",
+                                                "disabled": false,
+                                                "label": "Adelantar dinero",
+                                                "checked": "none",
+                                                "info": "",
+                                                "hint": "",
+                                                "grouper": false,
+                                                "scopes": [],
+                                                "alt_labels": []
+                                              }
+                                            ],
+                                            "alt_labels": []
+                                        },
+                                        {
+                                            "id": "credits_read",
+                                            "depends": "",
+                                            "disabled": false,
+                                            "label": "Gestionar préstamos",
+                                            "checked": "none",
+                                            "info": "",
+                                            "hint": "",
+                                            "grouper": false,
+                                            "scopes": [],
+                                            "alt_labels": []
+                                        },
+                                        {
+                                            "id": "credits_write",
+                                            "depends": "",
+                                            "disabled": false,
+                                            "label": "Solicitar préstamos",
+                                            "checked": "none",
+                                            "info": "",
+                                            "hint": "",
+                                            "grouper": false,
+                                            "scopes": [],
+                                            "alt_labels": []
+                                        }
+                                    ],
+                                    "alt_labels": [],
+                                    "primary_action": {
+                                      "disabled": false,
+                                      "label": "Seleccionar todos",
+                                      "link": "/",
+                                      "type": ""
+                                    }
+                                },
+                                {
+                                    "id": "grouper_settings",
+                                    "depends": "",
+                                    "disabled": false,
+                                    "label": "Configuración",
+                                    "checked": "none",
+                                    "info": "",
+                                    "hint": "",
+                                    "grouper": true,
+                                    "type": "",
+                                    "scopes": [
+                                        {
+                                            "id": "title_profile_settigs",
+                                            "depends": "",
+                                            "disabled": false,
+                                            "label": "Configuración de tu perfil",
+                                            "checked": "none",
+                                            "info": "",
+                                            "hint": "",
+                                            "grouper": true,
+                                            "type": "title",
+                                            "scopes": [
+                                              {
+                                                "id": "account_info",
+                                                "depends": "",
+                                                "disabled": false,
+                                                "label": "Editar datos del perfil",
+                                                "checked": "none",
+                                                "info": "",
+                                                "hint": "",
+                                                "grouper": false,
+                                                "scopes": [],
+                                                "alt_labels": []
+                                              },
+                                              {
+                                                "id": "bank_account",
+                                                "depends": "",
+                                                "disabled": false,
+                                                "label": "Dar de alta una cuenta bancaria",
+                                                "checked": "none",
+                                                "info": "",
+                                                "hint": "",
+                                                "grouper": false,
+                                                "scopes": [],
+                                                "alt_labels": []
+                                              }
+                                            ],
+                                            "alt_labels": []
+                                        },
+                                        {
+                                            "id": "title_business_settigs",
+                                            "depends": "",
+                                            "disabled": false,
+                                            "label": "Ajustes del negocio",
+                                            "checked": "none",
+                                            "info": "",
+                                            "hint": "",
+                                            "grouper": true,
+                                            "type": "title",
+                                            "scopes": [
+                                              {
+                                                "id": "settings_rates",
+                                                "depends": "",
+                                                "disabled": false,
+                                                "label": "Configurar Tasas y plazos",
+                                                "checked": "none",
+                                                "info": "",
+                                                "hint": "",
+                                                "grouper": false,
+                                                "scopes": [],
+                                                "alt_labels": []
+                                              },
+                                              {
+                                                "id": "settings_installment",
+                                                "depends": "",
+                                                "disabled": false,
+                                                "label": "Ofrecer cuotas sin interés",
+                                                "checked": "none",
+                                                "info": "",
+                                                "hint": "",
+                                                "grouper": false,
+                                                "scopes": [],
+                                                "alt_labels": []
+                                              },
+                                              {
+                                                "id": "settings_discount",
+                                                "depends": "",
+                                                "disabled": false,
+                                                "label": "Ofrecer descuentos",
+                                                "checked": "none",
+                                                "info": "",
+                                                "hint": "",
+                                                "grouper": false,
+                                                "scopes": [],
+                                                "alt_labels": []
+                                              },
+                                              {
+                                                "id": "catalogue",
+                                                "depends": "",
+                                                "disabled": false,
+                                                "label": "Crear o editar tu catálogo de productos",
+                                                "checked": "none",
+                                                "info": "",
+                                                "hint": "",
+                                                "grouper": false,
+                                                "scopes": [],
+                                                "alt_labels": []
+                                              },
+                                              {
+                                                "id": "operators",
+                                                "depends": "",
+                                                "disabled": false,
+                                                "label": "Administrar colaboradores y locales",
+                                                "checked": "none",
+                                                "info": "",
+                                                "hint": "",
+                                                "grouper": false,
+                                                "scopes": [],
+                                                "alt_labels": []
+                                              },
+                                              {
+                                                "id": "settings_shipping",
+                                                "depends": "",
+                                                "disabled": false,
+                                                "label": "Ofrecer Mercado Envíos",
+                                                "checked": "none",
+                                                "info": "",
+                                                "hint": "",
+                                                "grouper": false,
+                                                "scopes": [],
+                                                "alt_labels": []
+                                              },
+                                              {
+                                                "id": "settings_credit_card",
+                                                "depends": "",
+                                                "disabled": false,
+                                                "label": "Recibir pagos con 2 tarjetas de crédito",
+                                                "checked": "none",
+                                                "info": "",
+                                                "hint": "",
+                                                "grouper": false,
+                                                "scopes": [],
+                                                "alt_labels": []
+                                              },
+                                              {
+                                                "id": "manage_suppliers",
+                                                "depends": "",
+                                                "disabled": false,
+                                                "label": "Gestión de proveedores",
+                                                "checked": "none",
+                                                "info": "",
+                                                "hint": "",
+                                                "grouper": false,
+                                                "scopes": [],
+                                                "alt_labels": []
+                                              }
+                                            ],
+                                            "alt_labels": []
+                                        }
+                                    ],
+                                    "alt_labels": [],
+                                    "primary_action": {
+                                      "disabled": false,
+                                      "label": "Seleccionar todos",
+                                      "link": "/",
+                                      "type": ""
+                                    }
+                                },
+                                {
+                                    "id": "grouper_reports",
+                                    "depends": "",
+                                    "disabled": false,
+                                    "label": "Configuración",
+                                    "checked": "none",
+                                    "info": "",
+                                    "hint": "",
+                                    "grouper": true,
+                                    "type": "",
+                                    "scopes": [
+                                        {
+                                            "id": "title_reports",
+                                            "depends": "",
+                                            "disabled": false,
+                                            "label": "Si seleccionas estos permisos, tu colabnorador podrá ver todos los movimientos de tu cuenta.",
+                                            "checked": "none",
+                                            "info": "",
+                                            "hint": "",
+                                            "grouper": true,
+                                            "type": "title",
+                                            "scopes": [
+                                              {
+                                                "id": "withholding_reports",
+                                                "depends": "",
+                                                "disabled": false,
+                                                "label": "Ver certificados de retenciones",
+                                                "checked": "none",
+                                                "info": "",
+                                                "hint": "",
+                                                "grouper": false,
+                                                "scopes": [],
+                                                "alt_labels": []
+                                              },
+                                              {
+                                                "id": "charts",
+                                                "depends": "",
+                                                "disabled": false,
+                                                "label": "Ver las métricas de tu negocio",
+                                                "checked": "none",
+                                                "info": "",
+                                                "hint": "",
+                                                "grouper": false,
+                                                "scopes": [],
+                                                "alt_labels": []
+                                              },
+                                              {
+                                                "id": "movements",
+                                                "depends": "",
+                                                "disabled": false,
+                                                "label": "Ver o descargar tus balances",
+                                                "checked": "none",
+                                                "info": "",
+                                                "hint": "",
+                                                "grouper": false,
+                                                "scopes": [],
+                                                "alt_labels": []
+                                              },
+                                              {
+                                                "id": "accounting_reports",
+                                                "depends": "",
+                                                "disabled": false,
+                                                "label": "Crear y descargar reportes de contabilidad",
+                                                "checked": "none",
+                                                "info": "Podrá generar reportes de dinero en cuenta y dinero disponible.",
+                                                "hint": "",
+                                                "grouper": false,
+                                                "scopes": [],
+                                                "alt_labels": []
+                                              },
+                                              {
+                                                "id": "operations_reports",
+                                                "depends": "",
+                                                "disabled": false,
+                                                "label": "Crear y descargar reporte de operaciones",
+                                                "checked": "none",
+                                                "info": "Podrá generar reportes de operaciones según sus permisos de actividad.",
+                                                "hint": "",
+                                                "grouper": false,
+                                                "scopes": [],
+                                                "alt_labels": []
+                                              }
+                                            ],
+                                            "alt_labels": []
+                                        }
+                                    ],
+                                    "alt_labels": [],
+                                    "primary_action": {
+                                      "disabled": false,
+                                      "label": "Seleccionar todos",
+                                      "link": "/",
+                                      "type": ""
+                                    }
+                                },
+                                {
+                                    "id": "grouper_reports",
+                                    "depends": "",
+                                    "disabled": false,
+                                    "label": "Configuración",
+                                    "checked": "none",
+                                    "info": "",
+                                    "hint": "",
+                                    "grouper": true,
+                                    "type": "",
+                                    "scopes": [
+                                        {
+                                            "id": "title_activities",
+                                            "depends": "",
+                                            "disabled": false,
+                                            "label": "¿Qué podrá ver tu colaborador?",
+                                            "checked": "none",
+                                            "info": "",
+                                            "hint": "",
+                                            "grouper": true,
+                                            "type": "title",
+                                            "scopes": [
+                                              {
+                                                "id": "activities",
+                                                "depends": "",
+                                                "disabled": false,
+                                                "label": "Todas las operaciones de la cuenta",
+                                                "checked": "none",
+                                                "info": "",
+                                                "hint": "",
+                                                "grouper": false,
+                                                "scopes": [],
+                                                "alt_labels": []
+                                              },
+                                              {
+                                                "id": "activities_collect",
+                                                "depends": "",
+                                                "disabled": false,
+                                                "label": "Todos los cobros de la cuenta",
+                                                "checked": "none",
+                                                "info": "",
+                                                "hint": "",
+                                                "grouper": false,
+                                                "scopes": [],
+                                                "alt_labels": []
+                                              },
+                                              {
+                                                "id": "my_activities",
+                                                "depends": "",
+                                                "disabled": false,
+                                                "label": "Solo sus operaciones",
+                                                "checked": "none",
+                                                "info": "",
+                                                "hint": "",
+                                                "grouper": false,
+                                                "scopes": [],
+                                                "alt_labels": []
+                                              },
+                                              {
+                                                "id": "stores_activities",
+                                                "depends": "",
+                                                "disabled": false,
+                                                "label": "Solo los cobros de los locales en los que opere",
+                                                "checked": "none",
+                                                "info": "",
+                                                "hint": "",
+                                                "grouper": false,
+                                                "scopes": [],
+                                                "alt_labels": []
+                                              },
+                                              {
+                                                "id": "no_activities",
+                                                "depends": "",
+                                                "disabled": false,
+                                                "label": "Ninguna operación",
+                                                "checked": "none",
+                                                "info": "",
+                                                "hint": "",
+                                                "grouper": false,
+                                                "scopes": [],
+                                                "alt_labels": []
+                                              }
+                                            ],
+                                            "alt_labels": []
+                                        }
+                                    ],
+                                    "alt_labels": [],
+                                    "primary_action": {
+                                      "disabled": false,
+                                      "label": "Seleccionar todos",
+                                      "link": "/",
+                                      "type": ""
+                                    }
+                                }
+                            ]
+                        },
+                        "scopes_ml": {
+                            "id": "grouper_scopes",
+                            "depends": "",
+                            "disabled": false,
+                            "label": "Permisos",
+                            "checked": "none",
+                            "info": "",
+                            "hint": "",
+                            "grouper": true,
+                            "type": "",
+                            "scopes": [
+                                {
+                                    "id": "item_management",
+                                    "depends": "",
+                                    "disabled": false,
+                                    "label": "Administrar publicaciones",
+                                    "checked": "none",
+                                    "info": "(Point, código QR o efectivo)",
+                                    "hint": "",
+                                    "grouper": false,
+                                    "scopes": [],
+                                    "alt_labels": []
+                                },
+                                {
+                                    "id": "promotion_packs_write",
+                                    "depends": "",
+                                    "disabled": false,
+                                    "label": "Mi concesionaria o inmobiliaria",
+                                    "checked": "none",
+                                    "info": "",
+                                    "hint": "",
+                                    "grouper": false,
+                                    "scopes": [],
+                                    "alt_labels": []
+                                },
+                                {
+                                    "id": "items_write_bid",
+                                    "depends": "",
+                                    "disabled": false,
+                                    "label": "Gestionar mis ventas",
+                                    "checked": "none",
+                                    "info": "",
+                                    "hint": "",
+                                    "grouper": false,
+                                    "scopes": [],
+                                    "alt_labels": []
+                                },
+                                {
+                                    "id": "questions_write",
+                                    "depends": "",
+                                    "disabled": false,
+                                    "label": "Preguntas pendientes",
+                                    "checked": "none",
+                                    "info": "",
+                                    "hint": "",
+                                    "grouper": false,
+                                    "scopes": [],
+                                    "alt_labels": []
+                                },
+                                {
+                                    "id": "orders_read",
+                                    "depends": "",
+                                    "disabled": false,
+                                    "label": "Mis compras",
+                                    "checked": "none",
+                                    "info": "",
+                                    "hint": "",
+                                    "grouper": false,
+                                    "scopes": [],
+                                    "alt_labels": []
+                                },
+                                {
+                                    "id": "billing_read_charges",
+                                    "depends": "",
+                                    "disabled": false,
+                                    "label": "Pagos y facturas",
+                                    "checked": "none",
+                                    "info": "",
+                                    "hint": "",
+                                    "grouper": false,
+                                    "scopes": [],
+                                    "alt_labels": []
+                                },
+                                {
+                                    "id": "users_write",
+                                    "depends": "",
+                                    "disabled": false,
+                                    "label": "Modificar mis datos",
+                                    "checked": "none",
+                                    "info": "",
+                                    "hint": "",
+                                    "grouper": false,
+                                    "scopes": [],
+                                    "alt_labels": []
+                                }
+                            ],
+                            "alt_labels": [],
+                            "primary_action": {
+                              "disabled": false,
+                              "label": "Seleccionar todos",
+                              "link": "/",
+                              "type": ""
+                            }
+                        }
+                    },
+                    "primary_action": {
+                        "disabled": false,
+                        "label": "Continuar",
+                        "link": "/collaborators/congrats",
+                        "type": ""
+                    },
+                    "secondary_action": {
+                        "disabled": false,
+                        "label": "Volver",
+                        "link": "/collaborators",
+                        "type": ""
+                    },
+                    "tracking_data": {
+                        "segmentation": "acquisition",
+                        "retry_email": ""
+                    }
+                };
+
+                console.log('permissionsTree', permissionsTree);
+                window.webkit.messageHandlers.interOp.postMessage("{ type: 'permissions_tree', data: " + JSON.stringify(permissionsTree) + " }");
             }
-       
-            function showAndroidToast() {
-                window.interOp.showToast("Hello, world!");
-            }
+
             </script>
     </head>
     
@@ -31,6 +884,20 @@
         <title>PRUEBA JAVASCRIPT INTERFACE SCRIPT</title>
     
         <h1 id="titulo">PRUEBA JAVASCRIPT INTERFACE SCRIPT</h1>
+
+        <br/>
+        <br/>
+        <br/>
+
+        <button onclick="goToNative()">Ir a nativo</button>
+
+        <br/>
+        <br/>
+
+        <h3>Arbol de permisos devuelto por nativo</h3>
+        <br/>
+
+        <p id="parrafo">Vacío</p>
                     
     </body>
     
